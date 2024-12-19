@@ -1,24 +1,5 @@
 """
-This is a proof-of-concept program that uses a Sparse Distributed Memory
-to conceal potentially malicious files. It works by reading in one or more malicious
-files, breaking them into chunks, and storing those chunks in a sparse distributed memory, 
-which consists of a mapping of logical memory addresses to data locations. Once all files
-are stored in the sdm, the memory adresses, data, keys, and retrieval function are stored in a 
-new file called 'neuro_loader.py'. In theory, traditional antivirus detection engines
-should not be able to discern that this loader file contains one or more embeded malicious
-files because it does not pack or encode the files in a manner that is typical of malware programs. 
 
-After the sdm is trained to remember the malicious files, the neuro loader file could, 
-in theory, be planted on a victim machine, and, depending on how the attacker wanted to trigger the 
-retrieval machanism, reconstruct the malicious file on the victim's host without having to download
-the files from the internet.
-
-This is merely a preliminary proof-of-concept. It has a number of problems, the two most notable
-of which being the large size of the 'neuro_loader.py' file, and the means by which the reconstruction
-is eventually triggered. More comprehensive, optimized and usable versions are in development.
-
-Author: Tim Johns
-Last Modified: 12/18/24
 """
 import numpy as np
 
